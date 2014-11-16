@@ -1,0 +1,61 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css">
+        <link rel="stylesheet" href="src/assets/stylesheets/screen.css">
+    </head>
+    <body>
+       
+        <header class="pure-u-1 header">
+          <h1 class="main-header">Contractor Calculator</h1>
+        </header>
+
+        <main class="main">
+          <section class="form-section pure-g">
+            <div class="form-wrapper pure-u-3-5">
+              <form class="pure-form pure-form-stacked">
+                <fieldset>
+                    <legend>Enter the contract details</legend>
+
+                    <label for="dailyRate">Daily rate</label>
+                    <input id="dailyRate" type="text" placeholder="Daily rate">
+
+                    <label for="tax">Tax</label>
+                    <input id="tax" type="text" placeholder="Tax">
+
+                    <label for="savings">Amount to save</label>
+                    <input id="savings" type="text" placeholder="Amount to save">
+
+                    <button type="submit" class="pure-button pure-button-primary">Submit</button>
+                </fieldset>
+            </form>
+            </div>
+            <div class="results-wrapper pure-u-2-5">
+              <div class="day-results">
+                <h2>Client charges</h2>
+                <p>Subtotal: </p>
+                <p>Tax: </p>
+                <p>Total: </p>                
+              </div>
+              <div class="savings-total">
+                <h2>Savings info</h2>
+                <p>Savings total: </p>
+                <p>Day count: </p>
+                <p>Average saving per day:</p> 
+              </div>
+            </div>
+          </section>
+        </main>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/{{JQUERY_VERSION}}/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-{{JQUERY_VERSION}}.min.js"><\/script>')</script>
+
+    </body>
+</html>
