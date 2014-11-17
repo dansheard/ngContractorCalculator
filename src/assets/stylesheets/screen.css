@@ -113,7 +113,11 @@ html {
   box-sizing: border-box;
 }
 
-/* line 42, ../sass/screen.scss */
+/* line 44, ../sass/screen.scss */
+.form-wrapper .ng-submitted input.ng-invalid {
+  border: 1px solid #e9322d;
+}
+/* line 48, ../sass/screen.scss */
 .form-wrapper legend {
   font-size: 24px;
   line-height: 36px;
@@ -121,15 +125,32 @@ html {
   line-height: 3.6rem;
   border-color: #333;
 }
-/* line 47, ../sass/screen.scss */
+/* line 53, ../sass/screen.scss */
 .form-wrapper .pure-form {
   box-sizing: border-box;
   border: 2px solid #333;
   padding: 20px;
   background-color: #fff;
 }
+/* line 60, ../sass/screen.scss */
+.form-wrapper .form-el-wrapper {
+  position: relative;
+}
+/* line 63, ../sass/screen.scss */
+.form-wrapper .form-el-wrapper .error {
+  color: #e9322d;
+  position: absolute;
+  top: 30px;
+  left: 180px;
+}
+@media (max-width: 750px) {
+  /* line 63, ../sass/screen.scss */
+  .form-wrapper .form-el-wrapper .error {
+    position: static;
+  }
+}
 
-/* line 56, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 .results-wrapper h2 {
   font-size: 24px;
   line-height: 36px;
@@ -137,7 +158,7 @@ html {
   line-height: 3.6rem;
   border-bottom: 1px solid #333;
 }
-/* line 61, ../sass/screen.scss */
+/* line 82, ../sass/screen.scss */
 .results-wrapper .day-results,
 .results-wrapper .savings-total {
   box-sizing: border-box;
@@ -145,13 +166,13 @@ html {
   padding: 20px;
   background-color: #fff;
 }
-/* line 69, ../sass/screen.scss */
+/* line 90, ../sass/screen.scss */
 .results-wrapper .day-results {
   margin-bottom: 47px;
 }
 
 @media (max-width: 750px) {
-  /* line 75, ../sass/screen.scss */
+  /* line 96, ../sass/screen.scss */
   .pure-u-3-5,
   .pure-u-2-5 {
     width: 100%;
