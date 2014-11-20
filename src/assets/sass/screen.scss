@@ -31,6 +31,10 @@ html {
 	@include font-size(48);
 }
 
+.form-section {
+	display: block;
+}
+
 .form-wrapper,
 .results-wrapper {
 	padding: 20px;
@@ -90,6 +94,12 @@ html {
 	.day-results {
 		margin-bottom: 47px;
 	}
+}
+
+.reset-button {
+	@include font-size(14);
+	display: block;
+	float: right;
 }
 
 @media (max-width: 750px) {
