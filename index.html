@@ -22,51 +22,51 @@
       <h1 class="main-header">Contractor Calculator</h1>
     </header>
 
-    <main class="main" ng-controller="FormCtrl">
+    <main class="main" ng-controller="FormCtrl as ctrl">
       <section class="form-section pure-g">
         <div class="form-wrapper pure-u-3-5">
-          <form class="pure-form pure-form-stacked" name="contractorForm" ng-submit="submit(); submitted = true;" novalidate>
+          <form class="pure-form pure-form-stacked" name="ctrl.contractorForm" ng-submit="ctrl.submit(); submitted = true;" novalidate>
             <fieldset>
               <legend>Enter the contract details</legend>
               
               <div class="form-el-wrapper">
                 <label for="dailyRate">Daily rate: £</label>
-                <input id="dailyRate" type="number" placeholder="Daily rate" name="dailyRate" min="1" ng-model="dailyRate" required>
+                <input id="dailyRate" type="number" placeholder="Daily rate" name="dailyRate" min="1" ng-model="ctrl.dailyRate" required>
                 <div ng-if="contractorForm.$submitted" ng-messages="contractorForm.dailyRate.$error" ng-messages-include="my-custom-messages"></div>
               </div>
               
               <div class="form-el-wrapper">
                 <label for="vat">VAT: %</label>
-                <input id="vat" type="number" placeholder="VAT" name="vat" min="1" ng-model="vat" required>
+                <input id="vat" type="number" placeholder="VAT" name="vat" min="1" ng-model="ctrl.vat" required>
                 <div ng-if="contractorForm.$submitted" ng-messages="contractorForm.vat.$error" ng-messages-include="my-custom-messages"></div>
               </div>
               
               <div class="form-el-wrapper">
                 <label for="dailyExpenses">Daily expenses: £</label>
-                <input id="dailyExpenses" type="number" placeholder="Daily expenses" min="0" ng-model="dailyExpenses" name="dailyExpenses" required>
+                <input id="dailyExpenses" type="number" placeholder="Daily expenses" min="0" ng-model="ctrl.dailyExpenses" name="dailyExpenses" required>
                 <div ng-if="contractorForm.$submitted" ng-messages="contractorForm.dailyExpenses.$error" ng-messages-include="my-custom-messages"></div>
               </div>
 
               <button type="submit" class="pure-button pure-button-primary">Submit</button>
-              <input class="pure-button pure-button-primary" ng-click="clearForm()" type="button" value="Cancel" />
+              <input class="pure-button pure-button-primary" ng-click="ctrl.clearForm()" type="button" value="Cancel" />
             </fieldset>
           </form>
         </div>
         <div class="results-wrapper pure-u-2-5">
           <div class="day-results">
             <h2>Client charges</h2>
-            <p>Subtotal: <span>£ {{ subtotal | number:2 }}</span></p>
-            <p>Expenses: <span ng-if="contractorForm.$submitted">£ {{ dailyExpenses | number:2 }}</span></p>
-            <p>Total: <span ng-if="contractorForm.$submitted">£ {{ subtotal + dailyExpenses | number:2 }}</span></p>                
+            <p>Subtotal: <span>£ {{ ctrl.subtotal | number:2 }}</span></p>
+            <p>Expenses: <span ng-if="contractorForm.$submitted">£ {{ ctrl.dailyExpenses | number:2 }}</span></p>
+            <p>Total: <span ng-if="contractorForm.$submitted">£ {{ ctrl.subtotal + ctrl.dailyExpenses | number:2 }}</span></p>                
           </div>
           <div class="savings-total">
             <h2>Pay total</h2>
-            <p>Pay total: £ {{ payTotal | number:2 }}</p>
-            <p>Day count: {{ dayCount }}</p>
-            <p>Average daily pay: {{ averageDailyPay | number:2 }}</p> 
+            <p>Pay total: £ {{ ctrl.payTotal | number:2 }}</p>
+            <p>Day count: {{ ctrl.dayCount }}</p>
+            <p>Average daily pay: {{ ctrl.averageDailyPay | number:2 }}</p> 
           </div>
         </div>
-        <input class="pure-button reset-button pure-button-primary" ng-click="reset()" type="button" value="Reset" />
+        <input class="pure-button reset-button pure-button-primary" ng-click="ctrl.reset()" type="button" value="Reset" />
       </section>
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.1/angular.min.js" type="text/javascript"></script>

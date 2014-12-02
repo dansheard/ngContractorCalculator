@@ -1,49 +1,51 @@
 angular.module('contractorCalculator', ['ngMessages'])
-  .controller('FormCtrl', ['$scope', function($scope) {
+  .controller('FormCtrl', function() {
+
+    var vm = this;
   	
-    $scope.initValues = function() {
-      $scope.submitted = false;
-      $scope.dailyRate = 0;
-      $scope.vat = 0;
-      $scope.dailyExpenses = 0;
-      $scope.payTotal = 0;
-      $scope.dayCount = 0;
-      $scope.averageDailyPay = 0;
-      $scope.subtotal = 0;
+    vm.initValues = function() {
+      vm.submitted = false;
+      vm.dailyRate = 0;
+      vm.vat = 0;
+      vm.dailyExpenses = 0;
+      vm.payTotal = 0;
+      vm.dayCount = 0;
+      vm.averageDailyPay = 0;
+      vm.subtotal = 0;
     };
 
-    $scope.initValues();
+    vm.initValues();
 
-    $scope.clearForm = function() {
-      $scope.dailyRate = null;
-      $scope.vat = null;
-      $scope.expenses = null;
+    vm.clearForm = function() {
+      vm.dailyRate = null;
+      vm.vat = null;
+      vm.expenses = null;
     }; 
 
-    $scope.reset = function() {
-      $scope.contractorForm.$setPristine();
-      $scope.initValues();
+    vm.reset = function() {
+      vm.contractorForm.$setPristine();
+      vm.initValues();
     }
 
-    $scope.submit = function() {
-      if ($scope.contractorForm.$valid) {
-        $scope.getSubtotal();
-        $scope.getPayTotal();
-        $scope.dayCount += 1;
-        $scope.averageDailyPay = $scope.payTotal / $scope.dayCount;
+    vm.submit = function() {
+      if (vm.contractorForm.$valid) {
+        vm.getSubtotal();
+        vm.getPayTotal();
+        vm.dayCount += 1;
+        vm.averageDailyPay = vm.payTotal / vm.dayCount;
       } 
     };
 
-    $scope.getSubtotal = function() {
-      var vatPercentage = $scope.vat / 100 * $scope.dailyRate;
-      $scope.subtotal = vatPercentage + $scope.dailyRate;
-      return $scope.subtotal;
+    vm.getSubtotal = function() {
+      var vatPercentage = vm.vat / 100 * vm.dailyRate;
+      vm.subtotal = vatPercentage + vm.dailyRate;
+      return vm.subtotal;
     };
 
-    $scope.getPayTotal = function() {
-      var dayTotals = $scope.dailyExpenses + $scope.subtotal;
-      $scope.payTotal += dayTotals;
-      return $scope.payTotal;
+    vm.getPayTotal = function() {
+      var dayTotals = vm.dailyExpenses + vm.subtotal;
+      vm.payTotal += dayTotals;
+      return vm.payTotal;
     };
 
-  }]);
+  });
