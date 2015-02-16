@@ -4,3 +4,7 @@
 *.swp
 *.out
 *.sass-cache
+**/.sass-cache
+**/.sass-cache/*
+.sass-cache
+.sass-cache/*
