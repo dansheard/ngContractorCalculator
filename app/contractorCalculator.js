@@ -19,7 +19,7 @@ angular.module('contractorCalculator', ['ngMessages'])
     vm.clearForm = function() {
       vm.dailyRate = null;
       vm.vat = null;
-      vm.expenses = null;
+      vm.dailyExpenses = null;
     }; 
 
     vm.reset = function() {
@@ -29,6 +29,7 @@ angular.module('contractorCalculator', ['ngMessages'])
 
     vm.submit = function() {
       if (vm.contractorForm.$valid) {
+        vm.submitted = true;
         vm.getSubtotal();
         vm.getPayTotal();
         vm.dayCount += 1;
