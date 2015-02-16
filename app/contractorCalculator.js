@@ -1,8 +1,28 @@
-angular.module('contractorCalculator', ['ngMessages'])
-  .controller('FormCtrl', function() {
+angular.module('contractorCalculator', ['ngMessages', 'ngRoute'])
+  .config(function($routeProvider) {
+    $routeProvider.when('/', {
+      templateUrl: './app/home.html',
+      controller : 'HomeCtrl as home'
+    })
+    .when('/new-day', {
+      templateUrl: './app/new-day.html',
+      controller : 'FormCtrl as form'
+    })
+    .when('/my-total-earnings', {
+      templateUrl: './app/my-total-earnings.html',
+      controller : 'FormCtrl as form'
+    })
+    .otherwise({
+        redirectTo : '/'
+    })
+  })
 
+  .controller('HomeCtrl', function() {
+    vm = this;
+  })
+
+  .controller('FormCtrl', function() {
     var vm = this;
-  	
     vm.initValues = function() {
       vm.submitted = false;
       vm.dailyRate = 0;
@@ -20,14 +40,17 @@ angular.module('contractorCalculator', ['ngMessages'])
       vm.dailyRate = null;
       vm.vat = null;
       vm.dailyExpenses = null;
+      vm.subtotal = 0;
+      vm.submitted = false;
+      vm.contractorForm.$setPristine();
     }; 
 
     vm.reset = function() {
-      vm.contractorForm.$setPristine();
       vm.initValues();
     }
 
     vm.submit = function() {
+
       if (vm.contractorForm.$valid) {
         vm.submitted = true;
         vm.getSubtotal();

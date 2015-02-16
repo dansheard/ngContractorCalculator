@@ -1,0 +1,9 @@
+<div class="results-wrapper pure-u-2-5">
+  <div class="savings-total">
+    <h2>Pay total</h2>
+    <p>Pay total: £ {{ ctrl.payTotal | number:2 }}</p>
+    <p>Day count: {{ ctrl.dayCount }}</p>
+    <p>Average daily pay: {{ ctrl.averageDailyPay | number:2 }}</p> 
+  </div>
+</div>
+<input class="pure-button reset-button pure-button-primary" ng-click="ctrl.reset()" type="button" value="Reset" />

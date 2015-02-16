@@ -95,6 +95,27 @@ html {
 }
 
 /* line 30, ../sass/screen.scss */
+.nav {
+  font-size: 14px;
+  line-height: 21px;
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+}
+/* line 33, ../sass/screen.scss */
+.nav .nav-item {
+  display: inline-block;
+}
+/* line 37, ../sass/screen.scss */
+.nav .nav-link {
+  color: #333;
+  text-decoration: none;
+}
+/* line 42, ../sass/screen.scss */
+.nav .nav-link:hover {
+  text-decoration: underline;
+}
+
+/* line 47, ../sass/screen.scss */
 .main-header {
   font-size: 48px;
   line-height: 72px;
@@ -102,15 +123,34 @@ html {
   line-height: 7.2rem;
 }
 
-/* line 34, ../sass/screen.scss */
+/* line 52, ../sass/screen.scss */
+.home-wrapper {
+  margin-top: 40px;
+}
+/* line 55, ../sass/screen.scss */
+.home-wrapper .home-header {
+  font-size: 24px;
+  line-height: 36px;
+  font-size: 2.4rem;
+  line-height: 3.6rem;
+}
+/* line 59, ../sass/screen.scss */
+.home-wrapper .home-intro {
+  font-size: 16px;
+  line-height: 24px;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+}
+
+/* line 64, ../sass/screen.scss */
 .form-section {
   display: block;
 }
 
-/* line 38, ../sass/screen.scss */
+/* line 68, ../sass/screen.scss */
 .form-wrapper,
 .results-wrapper {
-  padding: 20px;
+  margin-top: 20px;
   font-size: 14px;
   line-height: 21px;
   font-size: 1.4rem;
@@ -118,11 +158,11 @@ html {
   box-sizing: border-box;
 }
 
-/* line 48, ../sass/screen.scss */
+/* line 78, ../sass/screen.scss */
 .form-wrapper .ng-submitted input.ng-invalid {
   border: 1px solid #e9322d;
 }
-/* line 52, ../sass/screen.scss */
+/* line 82, ../sass/screen.scss */
 .form-wrapper legend {
   font-size: 24px;
   line-height: 36px;
@@ -130,18 +170,18 @@ html {
   line-height: 3.6rem;
   border-color: #333;
 }
-/* line 57, ../sass/screen.scss */
+/* line 87, ../sass/screen.scss */
 .form-wrapper .pure-form {
   box-sizing: border-box;
   border: 2px solid #333;
   padding: 20px;
   background-color: #fff;
 }
-/* line 64, ../sass/screen.scss */
+/* line 94, ../sass/screen.scss */
 .form-wrapper .form-el-wrapper {
   position: relative;
 }
-/* line 67, ../sass/screen.scss */
+/* line 97, ../sass/screen.scss */
 .form-wrapper .form-el-wrapper .error {
   color: #e9322d;
   position: absolute;
@@ -149,13 +189,13 @@ html {
   left: 180px;
 }
 @media (max-width: 750px) {
-  /* line 67, ../sass/screen.scss */
+  /* line 97, ../sass/screen.scss */
   .form-wrapper .form-el-wrapper .error {
     position: static;
   }
 }
 
-/* line 81, ../sass/screen.scss */
+/* line 111, ../sass/screen.scss */
 .results-wrapper h2 {
   font-size: 24px;
   line-height: 36px;
@@ -163,7 +203,7 @@ html {
   line-height: 3.6rem;
   border-bottom: 1px solid #333;
 }
-/* line 86, ../sass/screen.scss */
+/* line 116, ../sass/screen.scss */
 .results-wrapper .day-results,
 .results-wrapper .savings-total {
   box-sizing: border-box;
@@ -171,12 +211,12 @@ html {
   padding: 20px;
   background-color: #fff;
 }
-/* line 94, ../sass/screen.scss */
+/* line 124, ../sass/screen.scss */
 .results-wrapper .day-results {
   margin-bottom: 47px;
 }
 
-/* line 99, ../sass/screen.scss */
+/* line 129, ../sass/screen.scss */
 .reset-button {
   font-size: 14px;
   line-height: 21px;
@@ -184,10 +224,11 @@ html {
   line-height: 2.1rem;
   display: block;
   float: right;
+  margin-top: 10px;
 }
 
 @media (max-width: 750px) {
-  /* line 106, ../sass/screen.scss */
+  /* line 137, ../sass/screen.scss */
   .pure-u-3-5,
   .pure-u-2-5 {
     width: 100%;

@@ -1,0 +1,39 @@
+<main class="main">
+  <section class="form-section pure-g">
+    <div class="form-wrapper pure-u-3-5">
+      <form class="pure-form pure-form-stacked" name="ctrl.contractorForm" ng-submit="ctrl.submit(); submitted = true;" novalidate>
+        <fieldset>
+          <legend>Enter the contract details</legend>
+          
+          <div class="form-el-wrapper">
+            <label for="dailyRate">Daily rate: £</label>
+            <input id="dailyRate" type="number" placeholder="Daily rate" name="dailyRate" min="1" ng-model="ctrl.dailyRate" required>
+            <div ng-if="ctrl.contractorForm.$submitted" ng-messages="ctrl.contractorForm.dailyRate.$error" ng-messages-include="my-custom-messages"></div>
+          </div>
+          
+          <div class="form-el-wrapper">
+            <label for="vat">VAT: %</label>
+            <input id="vat" type="number" placeholder="VAT" name="vat" min="1" ng-model="ctrl.vat" required>
+            <div ng-if="ctrl.contractorForm.$submitted" ng-messages="ctrl.contractorForm.vat.$error" ng-messages-include="my-custom-messages"></div>
+          </div>
+          
+          <div class="form-el-wrapper">
+            <label for="dailyExpenses">Daily expenses: £</label>
+            <input id="dailyExpenses" type="number" placeholder="Daily expenses" min="0" ng-model="ctrl.dailyExpenses" name="dailyExpenses" required>
+            <div ng-if="ctrl.contractorForm.$submitted" ng-messages="ctrl.contractorForm.dailyExpenses.$error" ng-messages-include="my-custom-messages"></div>
+          </div>
+
+          <button type="submit" class="pure-button pure-button-primary">Submit</button>
+          <input class="pure-button pure-button-primary" ng-click="ctrl.clearForm()" type="button" value="Cancel" />
+        </fieldset>
+      </form>
+    </div>
+    <div class="pure-u-3-5 results-wrapper">
+      <div class="day-results">
+        <h2>Client charges</h2>
+        <p>Subtotal: <span>£ {{ ctrl.subtotal | number:2 }}</span></p>
+        <p>Expenses: <span ng-if="ctrl.contractorForm.$submitted">£ {{ ctrl.dailyExpenses | number:2 }}</span></p>
+        <p>Total: <span ng-if="ctrl.contractorForm.$submitted">£ {{ ctrl.subtotal + ctrl.dailyExpenses | number:2 }}</span></p>                
+      </div>
+  </section>
+</main>

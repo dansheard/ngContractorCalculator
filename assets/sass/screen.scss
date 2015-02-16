@@ -27,8 +27,38 @@ html {
 	text-align: center;
 }
 
+.nav {
+	@include font-size(14);
+	
+	.nav-item {
+		display: inline-block;
+	}
+
+	.nav-link {
+		color: #333;
+		text-decoration: none;
+	}
+
+	.nav-link:hover {
+		text-decoration: underline;
+	}
+}
+
 .main-header {
 	@include font-size(48);
+}
+
+
+.home-wrapper {
+	margin-top: 40px;
+
+	.home-header {
+		@include font-size(24);
+	}
+
+	.home-intro {
+		@include font-size(16);
+	}
 }
 
 .form-section {
@@ -37,7 +67,7 @@ html {
 
 .form-wrapper,
 .results-wrapper {
-	padding: 20px;
+	margin-top: 20px;
 	@include font-size(14);
 	box-sizing: border-box;
 }
@@ -100,6 +130,7 @@ html {
 	@include font-size(14);
 	display: block;
 	float: right;
+	margin-top: 10px;
 }
 
 @media (max-width: 750px) {
