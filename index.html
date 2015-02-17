@@ -16,7 +16,7 @@
       <span class="error" ng-message="number">Not a valid number</span>
     </script>
   </head>
-  <body>
+  <body ng-class="{loading: isLoading}">
    
     <header class="pure-u-1 header">
       <h1 class="main-header">Contractor Calculator</h1>
@@ -26,12 +26,14 @@
         <li class="nav-item"><a class="nav-link" href="#/my-total-earnings/">My total Earnings</a></li>
       </ul>
     </header>
-
-    <div ng-view ng-controller="FormCtrl as ctrl"></div>
+    <div class="animate-view-container">
+      <div class="animate-view" ng-view ng-controller="FormCtrl as ctrl"></div>
+    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.1/angular.min.js" type="text/javascript"></script>
     <script src="./app/libs/angular-messages.min.js" type="text/javascript"></script>
     <script src="./app/libs/angular-route.min.js" type="text/javascript"></script>
+    <script src="./app/libs/angular-animate.min.js" type="text/javascript"></script>
     
     <script src="./app/contractorCalculator.js"></script>
 
